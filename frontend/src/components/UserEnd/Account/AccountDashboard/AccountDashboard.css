@@ -1,0 +1,245 @@
+/* ==========================================================================
+   ACCOUNT DASHBOARD COMPONENT STYLES
+   - Compact Welcome Box
+   - Compact 5-Stat Cards Grid with Links
+   - Recent Orders Table & Centered Empty State
+   - Profile & Default Shipping Snapshot
+   - Centered White Quick Actions Bar
+   ========================================================================== */
+
+/* Compact Welcome Card */
+.account-welcome-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 14px 20px;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.account-welcome-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.account-member-badge {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Compact Stats Grid (5 Cards) */
+.account-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.account-stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 10px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+}
+
+.account-stat-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.account-stat-icon {
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+
+.account-stat-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.account-stat-label {
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Orders Table on Dashboard */
+.account-orders-table-wrapper {
+  overflow-x: auto;
+}
+
+.account-orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.account-orders-table th {
+  background: var(--color-surface-subtle);
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-size: 0.725rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.account-orders-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+}
+
+/* Vertically & Horizontally Centered Empty State Box */
+.account-empty-state-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  width: 100%;
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.account-empty-state-text {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Snapshot Grid */
+.account-snapshot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.account-snapshot-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+}
+
+.account-snapshot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-3);
+}
+
+.account-snapshot-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.account-snapshot-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.account-snapshot-content p {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+/* Quick Actions Bar (White Background & Centered Items) */
+.account-quick-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-xs);
+}
+
+.account-actions-label {
+  font-size: 0.775rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .account-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .account-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .account-snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .account-welcome-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .account-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .account-quick-actions-bar {
+    flex-direction: column;
+  }
+
+  .account-quick-actions-bar .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

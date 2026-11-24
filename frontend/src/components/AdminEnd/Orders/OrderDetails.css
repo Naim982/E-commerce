@@ -1,0 +1,89 @@
+/* OrderDetails.css */
+
+.order-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .order-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.order-items-table th,
+.order-items-table td {
+    padding: 12px 16px;
+}
+
+.order-item-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    object-fit: cover;
+    background-color: #f1f5f9;
+    border: 1px solid var(--admin-border);
+}
+
+.order-cost-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+    color: var(--admin-text-muted);
+}
+
+.order-cost-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--admin-text-main);
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px solid var(--admin-border);
+}
+
+/* Printable Packing Slip / Invoice Styles */
+@media print {
+    /* Hide admin shell */
+    .admin-sidebar,
+    .admin-topbar,
+    .admin-mobile-drawer,
+    .no-print,
+    .admin-btn,
+    .admin-toast-container {
+        display: none !important;
+    }
+
+    body, .admin-layout-root, .admin-main-wrap, .admin-content-area, .admin-page {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .order-details-grid {
+        display: block !important;
+    }
+
+    .admin-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        margin-bottom: 20px !important;
+        background: #ffffff !important;
+    }
+
+    .print-only-header {
+        display: block !important;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 15px;
+    }
+}
+
+.print-only-header {
+    display: none;
+}

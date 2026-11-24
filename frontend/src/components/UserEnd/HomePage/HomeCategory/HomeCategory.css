@@ -1,0 +1,109 @@
+.home-categories-section {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  background-color: var(--color-surface-subtle);
+}
+
+/* Horizontal single-line scroll track */
+.home-category-track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-3);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-2);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.home-category-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.home-category-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.home-category-track::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.home-category-track::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-strong);
+}
+
+/* Category Box: reduced height, white card, cursor default on card */
+.home-cat-tile {
+  flex: 0 0 auto;
+  width: 175px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.home-cat-tile:hover {
+  background: #ffffff;
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.home-cat-icon {
+  font-size: 1.25rem;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-cat-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.home-cat-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* "Show all" text link: cursor pointer, accent color, text only (not button) */
+.home-cat-show-all {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 2px;
+  line-height: 1.2;
+  transition: color var(--transition-fast);
+}
+
+.home-cat-show-all:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}

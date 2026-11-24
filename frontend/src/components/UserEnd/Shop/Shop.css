@@ -1,0 +1,341 @@
+/* ==========================================================================
+   SHOP & HARDWARE CATALOG PAGE STYLES — LUMEN TECHNOLOGY
+   ========================================================================== */
+
+/* Breadcrumb */
+.catalog-breadcrumb-wrapper {
+  background: var(--color-surface-subtle);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-3);
+}
+
+.catalog-breadcrumb ol {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+}
+
+.catalog-breadcrumb a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.catalog-breadcrumb a:hover {
+  color: var(--color-accent);
+}
+
+.catalog-sep {
+  color: var(--color-border-strong);
+}
+
+/* Catalog Intro */
+.catalog-intro-section {
+  padding-block: var(--space-6) var(--space-4);
+  background: var(--color-surface);
+}
+
+.catalog-intro-card {
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-6), 4vw, var(--space-8));
+}
+
+.catalog-intro-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.catalog-intro-title {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+  margin-bottom: var(--space-2);
+}
+
+.catalog-intro-desc {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+
+.catalog-intro-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.catalog-trust-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-xs);
+}
+
+.catalog-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-success);
+}
+
+/* Main Catalog Layout (280px Sidebar + 1fr Grid) */
+.catalog-main-section {
+  padding-block: var(--space-4) var(--space-12);
+  background: var(--color-surface);
+}
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.catalog-content-col {
+  min-width: 0;
+}
+
+/* Active Filter Chips Row */
+.catalog-active-filters-row {
+  margin-bottom: var(--space-4);
+}
+
+.catalog-active-chips {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.catalog-chips-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.catalog-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.catalog-filter-chip:hover {
+  background: var(--color-error-bg);
+  border-color: var(--color-error-border);
+  color: var(--color-error);
+}
+
+.catalog-clear-all-chip {
+  background: none;
+  border: none;
+  color: var(--color-error);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+/* Base Multi-Column Grid View for Catalog */
+.catalog-product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--space-4) !important;
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 1200px) {
+  .catalog-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .catalog-product-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* List View Override */
+.catalog-product-grid.list-view {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--space-4) !important;
+}
+
+/* Pagination */
+.catalog-pagination-wrapper {
+  margin-top: var(--space-10);
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.catalog-page-btn,
+.catalog-page-num {
+  height: 38px;
+  padding-inline: 14px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.catalog-page-num {
+  min-width: 38px;
+  padding-inline: 8px;
+}
+
+.catalog-page-btn:hover:not(.disabled),
+.catalog-page-num:hover:not(.active) {
+  background: var(--color-surface-subtle);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.catalog-page-num.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.catalog-page-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.catalog-page-ellipsis {
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+/* UI States (Empty / Skeleton) */
+.catalog-state-box {
+  background: var(--color-surface-subtle);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12);
+  text-align: center;
+  max-width: 600px;
+  margin: var(--space-8) auto;
+}
+
+.catalog-state-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-3);
+}
+
+.catalog-state-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.catalog-state-desc {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  line-height: 1.5;
+}
+
+.catalog-skeleton-card {
+  height: 380px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Catalog Trust Strip */
+.catalog-trust-strip-section {
+  padding-block: var(--space-8);
+  background: var(--color-surface-subtle);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.catalog-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.catalog-trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+}
+
+.catalog-trust-icon {
+  font-size: 1.75rem;
+}
+
+.catalog-trust-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+}
+
+.catalog-trust-item small {
+  font-size: 0.725rem;
+  color: var(--color-text-muted);
+}
+
+/* Responsive Catalog Breakpoints */
+@media (max-width: 1024px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+}

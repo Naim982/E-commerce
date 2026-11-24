@@ -1,0 +1,220 @@
+/* ==========================================================================
+   ADMIN PRODUCTS STYLESHEET
+   ========================================================================== */
+
+.products-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+}
+
+.products-filters-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.table-product-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.table-product-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    background-color: #f8fafc;
+}
+
+.table-product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-product-title {
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 0.875rem;
+    max-width: 320px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-product-id {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-family: monospace;
+}
+
+/* Product Form Styles */
+.product-form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-6, 24px);
+    align-items: start;
+}
+
+.form-preview-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.form-preview-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #f8fafc;
+}
+
+.form-preview-body {
+    padding: 16px;
+}
+
+.form-preview-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.form-preview-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.form-preview-current-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.form-preview-old-price {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.form-specs-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.form-spec-chip {
+    font-size: 0.75rem;
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .product-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dynamic Form Controls */
+.admin-dynamic-group {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.admin-dynamic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.admin-dynamic-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.admin-dynamic-row:last-child {
+    margin-bottom: 0;
+}
+
+.admin-remove-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-remove-btn:hover {
+    background-color: #fee2e2;
+}
+
+.admin-add-item-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f1f5f9;
+    border: 1px dashed #cbd5e1;
+    color: #334155;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.825rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.admin-add-item-btn:hover {
+    background-color: #e2e8f0;
+    border-color: #94a3b8;
+}
+
+.admin-thumbnail-slot {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.admin-thumbnail-preview {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    flex-shrink: 0;
+}

@@ -1,0 +1,509 @@
+/* ==========================================================================
+   37. CONFIRMATION & ORDER DETAILS STYLES
+   ========================================================================== */
+
+.confirmation-card-box {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: clamp(var(--space-6), 4vw, var(--space-10));
+  max-width: 860px;
+  margin-inline: auto;
+  margin-block: var(--space-6) var(--space-12);
+  box-shadow: var(--shadow-md);
+}
+
+.confirmation-hero-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.confirmation-check-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: #059669;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+.confirmation-title {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.confirmation-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  max-width: 580px;
+}
+
+.confirmation-order-tag-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 10px 20px;
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.confirmation-tag-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmation-tag-item small {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+}
+
+.confirmation-tag-item strong {
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+}
+
+.confirmation-tag-sep {
+  color: var(--color-border);
+}
+
+/* Timeline Card */
+.confirmation-timeline-card,
+.order-details-header-card {
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.confirmation-timeline-steps,
+.order-timeline-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-4);
+  position: relative;
+}
+
+.conf-step,
+.order-timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+  z-index: 2;
+  background: var(--color-surface-subtle);
+  padding-inline: 6px;
+}
+
+.conf-step-circle,
+.order-timeline-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.conf-step.completed .conf-step-circle,
+.order-timeline-step.completed .order-timeline-dot {
+  background: #059669;
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.conf-step.active .conf-step-circle,
+.order-timeline-step.active .order-timeline-dot {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.conf-step strong,
+.order-timeline-step strong {
+  font-size: 0.775rem;
+  color: var(--color-text-primary);
+}
+
+.conf-step small,
+.order-timeline-step small {
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+}
+
+.conf-timeline-bar,
+.order-timeline-line {
+  flex: 1;
+  height: 2px;
+  background: var(--color-border);
+  margin-inline: var(--space-1);
+}
+
+.conf-timeline-bar.completed,
+.order-timeline-line.completed {
+  background: #059669;
+}
+
+.confirmation-details-grid,
+.order-info-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.confirmation-info-block {
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.confirmation-subheading {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.conf-price-row,
+.order-carrier-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2px;
+}
+
+.conf-price-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid var(--color-border);
+}
+
+.confirmation-items-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.confirmation-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.conf-item-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.conf-item-row img {
+  width: 60px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-subtle);
+}
+
+.conf-item-details {
+  flex: 1;
+}
+
+.conf-item-details strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+
+.conf-item-details small {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.conf-item-warranty {
+  font-size: 0.7rem;
+  color: var(--color-success);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.conf-item-price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+}
+
+.confirmation-actions-row {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-top: var(--space-8);
+  flex-wrap: wrap;
+}
+
+/* Order Details Specific */
+.order-details-header-card {
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.order-actions-top-bar {
+  display: flex;
+  gap: var(--space-2);
+  margin-block: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.order-items-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.order-item-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 60px 100px auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.order-item-img img {
+  width: 70px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.order-item-specs-strip {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.order-item-specs-strip span {
+  font-size: 0.6875rem;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  padding: 1px 6px;
+  border-radius: var(--radius-xs);
+  color: var(--color-text-muted);
+}
+
+.order-item-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.725rem;
+  margin-top: 4px;
+}
+
+.order-item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Order Modals */
+.order-modal-box {
+  background: #ffffff;
+  border-radius: var(--radius-2xl);
+  max-width: 580px;
+  width: 100%;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-modal-header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.order-modal-body {
+  padding: var(--space-5);
+  overflow-y: auto;
+}
+
+.order-modal-footer {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.order-track-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-4);
+}
+
+.order-track-eta small {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+}
+
+.order-track-eta strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+}
+
+.order-track-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.order-track-event {
+  display: flex;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.order-track-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+}
+
+.order-track-event.completed .order-track-dot {
+  background: #059669;
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.order-track-event.active .order-track-dot {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.order-track-info strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+
+.order-track-info p {
+  font-size: 0.775rem;
+  color: var(--color-text-secondary);
+}
+
+.order-track-info small {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .checkout-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmation-details-grid,
+  .order-info-columns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-item-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 640px) {
+
+  .checkout-saved-addresses-grid,
+  .checkout-payment-tabs,
+  .checkout-review-snapshots {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-form-row,
+  .checkout-form-row.three-col {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmation-timeline-steps,
+  .order-timeline-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .conf-timeline-bar,
+  .order-timeline-line {
+    display: none;
+  }
+}

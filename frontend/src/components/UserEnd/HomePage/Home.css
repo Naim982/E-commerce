@@ -1,0 +1,438 @@
+/* --------------------------------------------------------------------------
+   4. HERO / CURRENT SPECIALS CAROUSEL (ONE SLIDE AT A TIME, 3S ROTATION)
+   5. QUICK HARDWARE CATEGORY TILES
+   6. SECTION HEADERS & UTILITIES
+   -------------------------------------------------------------------------- */
+
+main {
+  background-color: var(--color-surface-subtle);
+}
+
+.home-section {
+  padding-block: var(--space-6) var(--space-8);
+  background-color: var(--color-surface-subtle);
+}
+
+.home-section-subtle {
+  background-color: var(--color-surface-subtle);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.home-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-8);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.home-header-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.home-section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.home-section-title {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.home-section-desc {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  max-width: 600px;
+}
+
+.home-view-all-link {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap var(--transition-fast);
+}
+
+.home-view-all-link:hover {
+  gap: 8px;
+  color: var(--color-accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   7. FEATURED FLASH DEALS SECTION
+   8. UNIFIED PRODUCT GRID & HARDWARE CARDS
+   -------------------------------------------------------------------------- */
+
+.home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-6);
+}
+
+.home-product-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.home-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-surface-subtle);
+  display: block;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.home-product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-badge-group {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+}
+
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.wishlist-btn:hover,
+.wishlist-btn.active {
+  color: var(--color-error);
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+.product-info {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-brand {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.product-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: var(--space-2);
+  flex-grow: 1;
+}
+
+.product-title a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.product-title a:hover {
+  color: var(--color-accent);
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  margin-bottom: var(--space-3);
+}
+
+.star-rating {
+  color: #f59e0b;
+}
+
+.rating-text {
+  color: var(--color-text-muted);
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.price-current {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.price-original {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+
+/* Ranked Best Sellers */
+.home-ranked-card {
+  position: relative;
+}
+
+.home-rank-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.home-sales-indicator {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+/* --------------------------------------------------------------------------
+   9. "BUILD YOUR PC" SIGNATURE CUSTOMIZER SECTION
+   10. CURATED HARDWARE COLLECTIONS
+   --------------------------------------------------------------------------  */
+
+.home-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.home-collection-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-6);
+  color: #ffffff;
+}
+
+.home-collection-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.home-collection-card:hover .home-collection-bg {
+  transform: scale(1.06);
+}
+
+.home-collection-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.3) 100%);
+  z-index: 1;
+}
+
+.home-collection-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.home-collection-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #6ee7b7;
+}
+
+.home-collection-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.home-collection-desc {
+  font-size: 0.8125rem;
+  color: #cbd5e1;
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   11. BRAND SHOWCASE
+   12. PROMOTIONAL EVENT CARDS
+   13. TRUST & SERVICES SECTION
+   14. HARDWARE BUYER GUIDES
+   15. TECH BLOG & REVIEWS
+   16. CUSTOMER REVIEWS & TESTIMONIALS
+   17. NEWSLETTER / DROP ALERTS
+   18. HARDWARE STORE FOOTER
+   19. RESPONSIVE BREAKPOINTS (1200px, 1024px, 768px, 480px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+  .home-mega-menu {
+    width: 680px;
+    left: -50px;
+  }
+
+  .home-footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .home-hero-content {
+    order: 1;
+  }
+
+  .home-hero-visual {
+    order: 2;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .home-builder-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .home-header-search {
+    display: none;
+  }
+
+  .mobile-search-bar {
+    display: block !important;
+    padding: var(--space-3) var(--container-padding);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .home-announcement-text {
+    display: none;
+  }
+
+  .home-deals-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .home-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .home-event-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .home-newsletter-input-group {
+    flex-direction: column;
+  }
+
+  .home-hero-slide {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-category-grid {
+    grid-template-columns: 1fr;
+  }
+}

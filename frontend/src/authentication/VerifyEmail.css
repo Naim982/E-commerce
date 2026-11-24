@@ -1,0 +1,653 @@
+/* ==========================================================================
+   VERIFY EMAIL PAGE STYLES — LUMEN TECHNOLOGY
+   ========================================================================== */
+
+/* Top Action Bar */
+.verify-top-bar {
+  position: absolute;
+  top: clamp(var(--space-4), 3vw, var(--space-6));
+  left: clamp(var(--space-4), 3vw, var(--space-8));
+  right: clamp(var(--space-4), 3vw, var(--space-8));
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  pointer-events: auto;
+}
+
+.verify-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+}
+
+.verify-back-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+/* Interactive Preview State Toggle Pill */
+.verify-state-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  border: 1px solid rgba(79, 70, 229, 0.25);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.verify-state-toggle-btn:hover {
+  background: rgba(79, 70, 229, 0.16);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.verify-toggle-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25);
+}
+
+/* Card Body (Vertically Centered in Right Part) */
+.verify-card-body {
+  width: 100%;
+  margin-block: auto;
+}
+
+/* ==========================================================================
+   STATE 1: ENTER USER'S EMAIL (REQUEST VERIFICATION)
+   ========================================================================== */
+
+.verify-input-view {
+  animation: verifyFadeIn 0.3s ease;
+  width: 100%;
+}
+
+.verify-form-group {
+  margin-bottom: 20px;
+}
+
+.verify-form .form-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.verify-form .form-label .required {
+  color: var(--color-error);
+  margin-left: 2px;
+}
+
+.verify-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.verify-input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify-input {
+  width: 100%;
+  padding-left: 44px;
+  padding-right: 16px;
+  height: 48px;
+  font-size: 0.9375rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-primary);
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.verify-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-subtle);
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   STATE 2: EMAIL SENT / VERIFICATION PENDING
+   ========================================================================== */
+
+.verify-pending-view {
+  animation: verifyFadeIn 0.3s ease;
+  width: 100%;
+}
+
+.verify-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: var(--space-2);
+}
+
+.verify-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.12) 0%, rgba(59, 130, 246, 0.12) 100%);
+  border: 1px solid rgba(79, 70, 229, 0.25);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+}
+
+.verify-title {
+  font-size: clamp(1.5rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.verify-subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+/* Email Address Pill Card */
+.verify-email-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--color-surface-subtle);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+}
+
+.verify-email-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.verify-email-icon {
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.verify-email-text {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.verify-email-status-pill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  background: #fef3c7;
+  color: #b45309;
+  border-radius: var(--radius-full);
+  border: 1px solid #fde68a;
+  flex-shrink: 0;
+}
+
+/* Instructions Box */
+.verify-instructions-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.verify-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.verify-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.verify-step-number {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.verify-step-text {
+  font-size: 0.84rem;
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+}
+
+.verify-step-text strong {
+  color: var(--color-text-primary);
+}
+
+/* Security Notice Pill Box */
+.verify-security-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  margin-bottom: 22px;
+}
+
+.verify-security-notice .notice-icon {
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.verify-security-notice .notice-text {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+/* Action Buttons */
+.verify-actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.verify-primary-btn {
+  height: 48px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #3b82f6 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.verify-primary-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+  filter: brightness(1.05);
+}
+
+.verify-primary-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.verify-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: verifySpin 0.7s linear infinite;
+}
+
+@keyframes verifySpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.verify-secondary-btn {
+  height: 44px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-primary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.verify-secondary-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+/* Dedicated message slot between header and card */
+.verify-message-slot {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-4);
+  width: 100%;
+}
+
+.verify-alert-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-lg);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  width: 100%;
+  animation: verifyFadeIn 0.25s ease;
+  box-sizing: border-box;
+}
+
+.verify-alert-banner.success {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+}
+
+.verify-alert-banner.info {
+  background: var(--color-info-bg);
+  border: 1px solid var(--color-info-border);
+  color: var(--color-info);
+}
+
+/* Quick Webmail Provider Chips */
+.verify-providers-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.verify-providers-label {
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
+}
+
+.verify-provider-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.verify-provider-chip:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+  transform: translateY(-1px);
+}
+
+/* Email Card Edit Action */
+.verify-email-edit-btn {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.verify-email-edit-btn:hover {
+  background: var(--color-accent-light);
+  text-decoration: underline;
+}
+
+/* Footer Link */
+.verify-footer-text {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.verify-accent-link {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.verify-accent-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   STATE 3: EMAIL VERIFIED SUCCESS STATE
+   ========================================================================== */
+
+.verify-success-view {
+  animation: verifyFadeIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.verify-success-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  border: 2px solid #a7f3d0;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
+  animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.verify-success-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-full);
+  font-size: 0.725rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-3);
+}
+
+.verify-success-title {
+  font-size: clamp(1.75rem, 2.5vw, 2.15rem);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+}
+
+.verify-success-desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  max-width: 400px;
+  margin: 0 0 24px 0;
+}
+
+/* Perks List */
+.verify-perks-box {
+  width: 100%;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.verify-perks-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.verify-perks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.verify-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.verify-perk-check {
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   ANIMATIONS & RESPONSIVE OVERRIDES
+   ========================================================================== */
+
+@keyframes verifyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .verify-top-bar {
+    position: static;
+    padding: var(--space-4) var(--space-4) 0;
+    margin-bottom: var(--space-2);
+  }
+
+  .verify-card-body {
+    margin: 0;
+    padding: var(--space-4) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .verify-title {
+    font-size: 1.5rem;
+  }
+
+  .verify-success-title {
+    font-size: 1.6rem;
+  }
+}

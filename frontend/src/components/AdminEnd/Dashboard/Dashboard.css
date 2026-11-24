@@ -1,0 +1,146 @@
+/* ==========================================================================
+   ADMIN DASHBOARD STYLESHEET
+   ========================================================================== */
+
+.dashboard-grid-2col {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-6, 24px);
+    margin-bottom: var(--space-6, 24px);
+}
+
+/* Pure CSS Sales Analytics Chart */
+.analytics-chart-container {
+    padding: 20px 24px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    position: relative;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.chart-bar-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+    position: relative;
+}
+
+.chart-bar-track {
+    width: 100%;
+    max-width: 44px;
+    height: 220px;
+    background-color: #f1f5f9;
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    position: relative;
+}
+
+.chart-bar-fill {
+    width: 100%;
+    background: linear-gradient(180deg, #4f46e5 0%, #312e81 100%);
+    border-radius: 6px 6px 0 0;
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.chart-bar-fill:hover {
+    filter: brightness(1.2);
+}
+
+.chart-bar-tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0f172a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    z-index: 10;
+}
+
+.chart-bar-group:hover .chart-bar-tooltip {
+    opacity: 1;
+}
+
+.chart-bar-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Category Distribution Bars */
+.category-dist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 24px;
+}
+
+.category-dist-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.category-dist-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+}
+
+.category-dist-name {
+    font-weight: 600;
+    color: #334155;
+}
+
+.category-dist-stats {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.category-progress-track {
+    width: 100%;
+    height: 8px;
+    background-color: #f1f5f9;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.category-progress-fill {
+    height: 100%;
+    background-color: #4f46e5;
+    border-radius: 9999px;
+    transition: width 0.6s ease;
+}
+
+/* Quick Actions Strip */
+.dashboard-actions-strip {
+    display: flex;
+    gap: 12px;
+    margin-bottom: var(--space-6, 24px);
+    flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .dashboard-grid-2col {
+        grid-template-columns: 1fr;
+    }
+}

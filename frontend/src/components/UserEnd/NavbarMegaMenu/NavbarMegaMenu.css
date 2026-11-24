@@ -1,0 +1,109 @@
+/* ==========================================================================
+   NAVBAR MEGA MENU STYLES
+   ========================================================================== */
+
+.home-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  width: 780px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-dropdown);
+  padding: var(--space-6);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-fast);
+  z-index: var(--z-dropdown);
+  pointer-events: none;
+}
+
+.nav-item-dropdown:hover .home-mega-menu,
+.nav-item-dropdown:focus-within .home-mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.home-mega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 240px;
+  gap: var(--space-6);
+}
+
+.home-mega-heading {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.home-mega-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-mega-list a {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  display: block;
+}
+
+.home-mega-list a:hover {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.home-mega-list a.home-mega-view-all {
+  color: var(--color-accent);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.home-mega-list a.home-mega-view-all:hover {
+  text-decoration: underline;
+}
+
+.home-mega-promo-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: #ffffff;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.home-mega-promo-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fca5a5;
+  letter-spacing: 0.05em;
+}
+
+.home-mega-promo-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.home-mega-promo-card p {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.4;
+}

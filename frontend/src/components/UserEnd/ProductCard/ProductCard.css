@@ -1,0 +1,190 @@
+/* ==========================================================================
+   PRODUCT CARD COMPONENT STYLES — LUMEN TECHNOLOGY
+   ========================================================================== */
+
+.product-card,
+.home-product-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-card:hover,
+.home-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
+}
+
+.product-card-media,
+.product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-surface-subtle);
+  display: block;
+}
+
+.product-card-img,
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-card-img,
+.home-product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-card-badges,
+.product-badge-group {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.product-card .product-card-actions,
+.product-card-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.product-card .product-card-actions .wishlist-btn,
+.product-card .product-card-actions .compare-btn,
+.product-card-wishlist,
+.wishlist-btn,
+.compare-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.product-card .product-card-actions .wishlist-btn,
+.product-card .product-card-actions .compare-btn {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+}
+
+.product-card-wishlist:hover,
+.wishlist-btn:hover,
+.product-card-wishlist.active,
+.wishlist-btn.active {
+  color: var(--color-error);
+  background: #ffffff;
+  border-color: rgba(239, 68, 68, 0.3);
+  transform: scale(1.08);
+}
+
+.compare-btn:hover,
+.compare-btn.active {
+  color: var(--color-accent);
+  background: #ffffff;
+  border-color: var(--color-accent);
+  transform: scale(1.08);
+}
+
+.product-card-body,
+.product-info {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-card-brand,
+.product-brand {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.product-card-title,
+.product-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: var(--space-2);
+  flex-grow: 1;
+}
+
+.product-card-title a,
+.product-title a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.product-card-title a:hover,
+.product-title a:hover {
+  color: var(--color-accent);
+}
+
+.product-card-rating,
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  margin-bottom: var(--space-3);
+}
+
+.star-rating,
+.rating-stars {
+  color: #f59e0b;
+}
+
+.rating-text,
+.rating-count {
+  color: var(--color-text-muted);
+}
+
+.product-card-footer,
+.product-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.price-current {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
